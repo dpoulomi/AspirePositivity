@@ -4,11 +4,11 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.springframework.security.core.userdetails.User;
 
-import com.hibernate.util.HibernateUtil;
-import com.login.model.user;
+import com.login.hibernate.util.HibernateUtil;
+import com.login.model.Users;
 public class RegisterService {
      
-public boolean register(final user user){
+public boolean register(final Users user){
      final Session session = HibernateUtil.openSession();
      if(isUserExists(user)) return false;  
      
@@ -29,7 +29,7 @@ public boolean register(final user user){
      return true;
 }
  
-public boolean isUserExists(final user user){
+public boolean isUserExists(final Users user){
      final Session session = HibernateUtil.openSession();
      boolean result = false;
      Transaction tx = null;

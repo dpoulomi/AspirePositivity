@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.login.model.user;
+import com.login.model.Users;
 import com.login.service.LoginService;
  
  
@@ -21,11 +21,11 @@ public class LoginServlet extends HttpServlet {
 	public void doPost(final HttpServletRequest request, final HttpServletResponse response)
             throws ServletException, IOException {
  
-     final String userId = request.getParameter("userId");   
+     final String username = request.getParameter("username");   
      final String password = request.getParameter("password");
      final LoginService loginService = new LoginService();
-     final boolean result = loginService.authenticateUser(userId, password);
-     final user user = loginService.getUserByUserId(userId);
+     final boolean result = loginService.authenticateUser(username, password);
+     final Users user = loginService.getUserByUserName(username);
      if(result == true){
          request.getSession().setAttribute("user", user);      
          response.sendRedirect("home.jsp");

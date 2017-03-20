@@ -1,42 +1,34 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<web-app xmlns:web="http://xmlns.jcp.org/xml/ns/javaee" id="AspirePositivy">
- <!--  <display-name>HelloWorld Application</display-name>
-  <description>
-        This is a simple web application with a source code organization
-        based on the recommendations of the Application Developer's Guide.
-    </description>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:web="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="AspirePositivy">
+  <display-name>MVCApplication</display-name>
   <servlet>
-    <servlet-name>Login</servlet-name>
-    <servlet-class>com.login.controller.Login</servlet-class>
+    <display-name>l</display-name>
+    <servlet-name>LoginServlet</servlet-name>
+    <servlet-class>com.login.controller.LoginServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <display-name>r</display-name>
+    <servlet-name>RegisterServlet</servlet-name>
+    <servlet-class>com.login.controller.RegisterServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>Login</servlet-name>
+    <servlet-name>LoginServlet</servlet-name>
     <url-pattern>/l</url-pattern>
-  </servlet-mapping> -->
-  
-  
-  
-   <display-name>MVCApplication</display-name>
-  <servlet>
-        <display-name>l</display-name>
-        <servlet-name>LoginServlet</servlet-name>
-        <servlet-class>com.login.controller.LoginServlet</servlet-class>
-    </servlet>
-    <servlet>
-        <display-name>r</display-name>
-        <servlet-name>RegisterServlet</servlet-name>
-        <servlet-class>com.login.controller.RegisterServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>LoginServlet</servlet-name>
-        <url-pattern>/l</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>RegisterServlet</servlet-name>
-        <url-pattern>/r</url-pattern>
-    </servlet-mapping>
-    <welcome-file-list>
-        <welcome-file>login.jsp</welcome-file>
-    </welcome-file-list>
-
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>RegisterServlet</servlet-name>
+    <url-pattern>/r</url-pattern>
+  </servlet-mapping>
+  <welcome-file-list>
+    <welcome-file>login.jsp</welcome-file>
+  </welcome-file-list>
+   <servlet>
+    <display-name>a</display-name>
+    <servlet-name>ActivityServlet</servlet-name>
+    <servlet-class>com.controller.activity.ActivityServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ActivityServlet</servlet-name>
+    <url-pattern>/a</url-pattern>
+  </servlet-mapping>
 </web-app>

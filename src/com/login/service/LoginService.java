@@ -7,29 +7,29 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
-import com.hibernate.util.HibernateUtil;
-import com.login.model.user;
+import com.login.hibernate.util.HibernateUtil;
+import com.login.model.Users;
  
 public class LoginService {
  
-    public boolean authenticateUser(final String userId, final String password) {
-        final user user = getUserByUserId(userId);         
-        if(user!=null && user.getUserId().equals(userId) && user.getPassword().equals(password)){
+    public boolean authenticateUser(final String username, final String password) {
+        final Users user = getUserByUserName(username);         
+        if(user!=null && user.getUsername().equals(username)){
             return true;
         }else{
             return false;
         }
     }
  
-    public user getUserByUserId(final String userId) {
+    public Users getUserByUserName(final String username) {
         final Session session = HibernateUtil.openSession();
         Transaction tx = null;
-        user user = null;
+        Users user = null;
         try {
             tx = session.getTransaction();
             tx.begin();
-            final Query query = session.createQuery("from User where userId='"+userId+"'");
-            user = (user)query.uniqueResult();
+            final Query query = session.createQuery("from Users where username='"+username+"'");
+            user = (Users)query.uniqueResult();
             tx.commit();
         } catch (final Exception e) {
             if (tx != null) {
@@ -42,23 +42,23 @@ public class LoginService {
         return user;
     }
      
-    public List<user> getListOfUsers(){
-        List<user> list = new ArrayList<user>();
-        final Session session = HibernateUtil.openSession();
-        Transaction tx = null;       
-        try {
-            tx = session.getTransaction();
-            tx.begin();
-            list = session.createQuery("from User").list();                       
-            tx.commit();
-        } catch (final Exception e) {
-            if (tx != null) {
-                tx.rollback();
-            }
-            e.printStackTrace();
-        } finally {
-            session.close();
-        }
-        return list;
-    }
+	public List<Users> getListOfUsers() {
+		List<Users> list = new ArrayList<>();
+		final Session session = HibernateUtil.openSession();
+		Transaction tx = null;
+		try {
+			tx = session.getTransaction();
+			tx.begin();
+			list = session.createQuery("from Users").list();
+			tx.commit();
+		} catch (final Exception e) {
+			if (tx != null) {
+				tx.rollback();
+			}
+			e.printStackTrace();
+		} finally {
+			session.close();
+		}
+		return list;
+	}
 }

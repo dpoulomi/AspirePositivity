@@ -5,7 +5,7 @@
 <%@page import="com.login.service.LoginService"%>
 <%@page import="java.util.Date"%>
 <%@page import="com.login.model.Users"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%-- <%@page contentType="text/html" pageEncoding="UTF-8"%> --%>
 
 <html>
 <head>
@@ -24,14 +24,27 @@
              %>
 			<b>Welcome <%= user.getFirstName() + " " + user.getLastName()%></b> <br />
 			<a href="logout.jsp">Logout</a>
+			<a href="AboutUs.jsp">About Us</a>
 			</p>
+			
+		<form method="post" action="/AspirePositivity/a">
+<!-- <button type="submit" name="button1" value="Add activity for the day"></input>  -->
+  <button type="submit" name="button" value="button1">Upload song</button>
+   
+</form>
+
+<!-- <form method="post" action="/AspirePositivity/a">
+<button type="submit" name="button1" value="Add activity for the day"></input> 
+  <button type="submit" name="button" value="button1">Button 1</button>
+  
+</form> -->
+
 
 			<table>
 				<thead>
 					<tr>
 						<th>User ID</th>
 						<th>First Name</th>
-						<th>Middle Name</th>
 						<th>Last Name</th>
 						<th>email</th>
 					</tr>

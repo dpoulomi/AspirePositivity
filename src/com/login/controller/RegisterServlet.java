@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.login.model.user;
+import com.login.model.Users;
 import com.login.service.RegisterService;
  
  
@@ -19,13 +19,20 @@ public class RegisterServlet extends HttpServlet {
      response.setContentType("text/html;charset=UTF-8");
      final PrintWriter out = response.getWriter();
      final String firstName = request.getParameter("firstName");
-     final String middleName = request.getParameter("middleName");
+     final String username = request.getParameter("username");
      final String lastName = request.getParameter("lastName");
-     final String email = request.getParameter("email");
+     final String emailId = request.getParameter("email");
      final String userId = request.getParameter("userId");
      final String password = request.getParameter("password");
-     final user user = new user(firstName,middleName,lastName, email,userId, password);
+     final Users user = Users.builder()
+    		 					.firstName(firstName)
+    		 					.lastName(lastName)
+    		 					.emailId(emailId)
+    		 					.password(password)
+    		 					.username(username)
+    		 					.build();
              
+    
      try { 
          final RegisterService registerService = new RegisterService();
          final boolean result = registerService.register(user);      

@@ -14,9 +14,9 @@
 			<div id="login-box">
 				<h2>Login Page</h2>
 				Please provide your credential to use this website <br> <br>
-				<div id="login-box-name" style="margin-top: 20px;">User Id:</div>
+				<div id="login-box-name" style="margin-top: 20px;">User Name:</div>
 				<div id="login-box-field" style="margin-top: 20px;">
-					<input name="userId" class="form-login" title="Username" value=""
+					<input name="username" class="form-login" title="Username" value=""
 						size="30" maxlength="50" />
 				</div>
 				<div id="login-box-name">Password:</div>
