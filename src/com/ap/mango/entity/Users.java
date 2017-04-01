@@ -1,4 +1,4 @@
-package com.login.model;
+package com.ap.mango.entity;
 
 import java.io.Serializable;
 

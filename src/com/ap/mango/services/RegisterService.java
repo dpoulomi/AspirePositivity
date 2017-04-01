@@ -1,11 +1,11 @@
-package com.login.service;
+package com.ap.mango.services;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.springframework.security.core.userdetails.User;
 
-import com.login.hibernate.util.HibernateUtil;
-import com.login.model.Users;
+import com.ap.mango.entity.Users;
+import com.ap.mango.utils.HibernateUtil;
 public class RegisterService {
      
 public boolean register(final Users user){

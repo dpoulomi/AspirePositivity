@@ -1,17 +1,18 @@
-package com.controller.activity;
+package com.ap.mango.web.controller;
 
 import java.io.IOException;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.google.inject.Singleton;
+
 /**
  * Servlet implementation class ActivityServlet
  */
-@WebServlet("/ActivityServlet")
+@Singleton
 public class ActivityServlet extends HttpServlet {
     /**
 	 * Serial id 
@@ -30,7 +31,7 @@ public class ActivityServlet extends HttpServlet {
 		
         final String button = request.getParameter("button");
         if ("button1".equals(button)) {
-        	 response.sendRedirect("activity.jsp");
+        	 response.sendRedirect("soundRecord.jsp");
         } /*else if ("button2".equals(button)) {
         	response.sendRedirect("activity.jsp");
         } else if ("button3".equals(button)) {

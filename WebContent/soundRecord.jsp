@@ -4,6 +4,10 @@
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<title>Audio Recorder</title>
 
+	<!-- <script src="audiodisplay.js"></script>
+	<script src="recorder.js"></script>
+	<script src="main.js"></script> -->
+	
 	<script src="js/audiodisplay.js"></script>
 	<script src="js/recorderjs/recorder.js"></script>
 	<script src="js/main.js"></script>

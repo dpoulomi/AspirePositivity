@@ -1,4 +1,4 @@
-package com.login.hibernate.util;
+package com.ap.mango.utils;
  
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;

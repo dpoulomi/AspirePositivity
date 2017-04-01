@@ -9,6 +9,6 @@
         <property name="hibernate.connection.password">polosubho</property>
         <property name="show_sql">true</property>      
         <property name="hbm2ddl.auto">create/update</property>
-        <mapping class="com.login.model.Users" />
+        <mapping class="com.ap.mango.entity.Users" />
     </session-factory>
 </hibernate-configuration>

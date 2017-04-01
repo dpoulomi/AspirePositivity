@@ -1,4 +1,4 @@
-package com.login.controller;
+package com.ap.mango.web.controller;
  
 import java.io.IOException;
 
@@ -7,10 +7,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.login.model.Users;
-import com.login.service.LoginService;
+import com.ap.mango.entity.Users;
+import com.ap.mango.services.LoginService;
+import com.google.inject.Singleton;
  
- 
+@Singleton
 public class LoginServlet extends HttpServlet {
     /**
 	 * Serial id 

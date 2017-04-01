@@ -2,9 +2,9 @@
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <%@page import="java.util.List"%>
-<%@page import="com.login.service.LoginService"%>
+<%@page import="com.ap.mango.services.LoginService"%>
 <%@page import="java.util.Date"%>
-<%@page import="com.login.model.Users"%>
+<%@page import="com.ap.mango.entity.Users"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <html>
